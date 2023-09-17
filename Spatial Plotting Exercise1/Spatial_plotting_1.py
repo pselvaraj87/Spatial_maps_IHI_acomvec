@@ -4,7 +4,7 @@ import pandas as pd
 shapefile_path = 'Africa_Boundaries.shp'
 gdf = gpd.read_file(shapefile_path)
 
-df = pd.read_excel("/Users/hamenyimanagervas/PycharmProjects/ITN-Sheet-Test/Spatial Plotting Exercise/Child-Health-Coverage-Database-May-2022.xlsx", sheet_name=9)
+df = pd.read_excel("/Users/hamenyimanagervas/PycharmProjects/ITN-Sheet-Test/Spatial Plotting Exercise1/Child-Health-Coverage-Database-May-2022.xlsx", sheet_name=9)
 categories = ['National', 'Male', 'Female', 'Rural', 'Urban', 'Poorest', 'Second', 'Middle', 'Fourth', 'Richest']
 
 df['Region'] = df['UNICEF Reporting Region'].apply(lambda x: x.split(' ')[-1])
