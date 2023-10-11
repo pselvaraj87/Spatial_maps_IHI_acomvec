@@ -2,7 +2,7 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-shapefile_path = 'Africa_Boundaries.shp'
+shapefile_path = 'Shapefiles/Africa_Boundaries.shp'
 african_map = gpd.read_file(shapefile_path)
 
 
@@ -16,7 +16,7 @@ categories = ['National', 'Male', 'Female', 'Rural', 'Urban', 'Poorest', 'Second
 df_countries = df.groupby(['ISO', 'Countries and areas', 'Year'])[categories].mean().reset_index()
 df_countries.fillna(0, inplace=True)
 # importing shapefile for African continent
-african_continent = gpd.read_file('Africa_Boundaries.shp')
+african_continent = gpd.read_file('Shapefiles/Africa_Boundaries.shp')
 
 # merging the data
 merged_data = african_continent.merge(df_countries, on='ISO', how='outer')
